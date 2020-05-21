@@ -1,0 +1,258 @@
+---- Minecraft Crash Report ----
+// Hi. I'm Minecraft, and I'm a crashaholic.
+
+Time: 5/20/20 10:05 PM
+Description: Initializing game
+
+java.lang.NullPointerException: Initializing game
+	at net.minecraft.client.renderer.color.ItemColors.func_199877_a(ItemColors.java:95) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at sonar.fluxnetworks.register.ClientRegistration.registerItemColorHandlers(ClientRegistration.java:84) ~[?:1.15.2-5.0.1-2] {re:classloading}
+	at net.minecraftforge.eventbus.ASMEventHandler_174_ClientRegistration_registerItemColorHandlers_Item.invoke(.dynamic) ~[?:?] {}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:80) ~[eventbus-2.2.0-service.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:258) ~[eventbus-2.2.0-service.jar:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:168) ~[?:31.1] {re:classloading}
+	at net.minecraftforge.fml.ModLoader.lambda$postEvent$31(ModLoader.java:260) ~[?:?] {re:classloading}
+	at net.minecraftforge.fml.ModLoader$$Lambda$10484/319284611.accept(Unknown Source) ~[?:?] {}
+	at java.util.HashMap.forEach(HashMap.java:1280) ~[?:1.8.0_51] {}
+	at net.minecraftforge.fml.ModList.forEachModContainer(ModList.java:218) ~[?:?] {re:classloading}
+	at net.minecraftforge.fml.ModLoader.postEvent(ModLoader.java:260) ~[?:?] {re:classloading}
+	at net.minecraftforge.client.ForgeHooksClient.onItemColorsInit(ForgeHooksClient.java:212) ~[?:?] {re:classloading}
+	at net.minecraft.client.renderer.color.ItemColors.func_186729_a(ItemColors.java:84) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.<init>(Minecraft.java:420) [?:?] {re:classloading,pl:accesstransformer:B,xf:fml:randompatches:RandomPatches Minecraft Transformer,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(SourceFile:166) [?:?] {re:classloading}
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_51] {}
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_51] {}
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_51] {}
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_51] {}
+	at net.minecraftforge.fml.loading.FMLClientLaunchProvider.lambda$launchService$0(FMLClientLaunchProvider.java:56) [forge-1.15.2-31.1.87.jar:31.1] {}
+	at net.minecraftforge.fml.loading.FMLClientLaunchProvider$$Lambda$467/742343633.call(Unknown Source) [forge-1.15.2-31.1.87.jar:31.1] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-5.1.0.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-5.1.0.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-5.1.0.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81) [modlauncher-5.1.0.jar:?] {re:classloading}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65) [modlauncher-5.1.0.jar:?] {re:classloading}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at net.minecraft.client.renderer.color.ItemColors.func_199877_a(ItemColors.java:95)
+	at sonar.fluxnetworks.register.ClientRegistration.registerItemColorHandlers(ClientRegistration.java:84)
+	at net.minecraftforge.eventbus.ASMEventHandler_174_ClientRegistration_registerItemColorHandlers_Item.invoke(.dynamic)
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:80)
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:258)
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:168)
+	at net.minecraftforge.fml.ModLoader.lambda$postEvent$31(ModLoader.java:260)
+	at net.minecraftforge.fml.ModLoader$$Lambda$10484/319284611.accept(Unknown Source)
+	at java.util.HashMap.forEach(HashMap.java:1280)
+	at net.minecraftforge.fml.ModList.forEachModContainer(ModList.java:218)
+	at net.minecraftforge.fml.ModLoader.postEvent(ModLoader.java:260)
+	at net.minecraftforge.client.ForgeHooksClient.onItemColorsInit(ForgeHooksClient.java:212)
+	at net.minecraft.client.renderer.color.ItemColors.func_186729_a(ItemColors.java:84)
+	at net.minecraft.client.Minecraft.<init>(Minecraft.java:420)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.main.Main.main(SourceFile:166)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at net.minecraftforge.fml.loading.FMLClientLaunchProvider.lambda$launchService$0(FMLClientLaunchProvider.java:56)
+	at net.minecraftforge.fml.loading.FMLClientLaunchProvider$$Lambda$467/742343633.call(Unknown Source)
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37)
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54)
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72)
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81)
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.15.2
+	Minecraft Version ID: 1.15.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 2052360408 bytes (1957 MB) / 3266314240 bytes (3115 MB) up to 7508852736 bytes (7161 MB)
+	CPUs: 8
+	JVM Flags: 5 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xss1M -Xmx8055m -Xms256m -XX:PermSize=256m
+	ModLauncher: 5.1.0+69+master.79f13f7
+	ModLauncher launch target: fmlclient
+	ModLauncher naming: srg
+	ModLauncher services: 
+		/eventbus-2.2.0-service.jar eventbus PLUGINSERVICE 
+		/forge-1.15.2-31.1.87.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.15.2-31.1.87.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-2.1.1-shadowed.jar accesstransformer PLUGINSERVICE 
+		/forge-1.15.2-31.1.87.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.15.2-31.1.87.jar runtimedistcleaner PLUGINSERVICE 
+		/forge-1.15.2-31.1.87.jar fml TRANSFORMATIONSERVICE 
+		/MixinBootstrap-1.0.3.jar mixinbootstrap TRANSFORMATIONSERVICE 
+		/MixinBootstrap-1.0.3.jar mixin PLUGINSERVICE 
+		/MixinBootstrap-1.0.3.jar mixinbootstrap PLUGINSERVICE 
+	FML: 31.1
+	Forge: net.minecraftforge:31.1.87
+	FML Language Providers: 
+		javafml@31.1
+		minecraft@1
+		kotlinfml@1.5.2
+	Mod List: 
+		NetherPortalFix_1.15.2-6.0.2.jar NetherPortalFix {netherportalfix@6.0.2 LOAD_REGISTRIES}
+		aiotbotania-1.15.2-1.2.2.jar AIOT Botania {aiotbotania@1.2.2 LOAD_REGISTRIES}
+		refinedpipes-0.4.1.jar Refined Pipes {refinedpipes@0.4.1 LOAD_REGISTRIES}
+		mcw-windows-1.0.1-mc1.15.2_1.15.1.jar Macaw's Windows {mcwwindows@1.0.1 LOAD_REGISTRIES}
+		SilentMechanisms-1.15.2-0.7.1+51.jar Silent's Mechanisms {silents_mechanisms@0.7.1+51 LOAD_REGISTRIES}
+		KleeSlabs_1.15.2-8.0.0.jar KleeSlabs {kleeslabs@8.0.0 LOAD_REGISTRIES}
+		Neat 1.6-21.jar Neat {neat@1.6-21 LOAD_REGISTRIES}
+		essentials-1.15.2-2.7.1.jar Essentials {essentials@1.15.2-2.7.1 LOAD_REGISTRIES}
+		TerraForged-1.15.2-0.0.14.jar TerraForged {terraforged@0.0.14 LOAD_REGISTRIES}
+		BetterTitleScreen-1.15.2-1.9.jar Better Title Screen {bettertitlescreen@1.15.2-1.9 LOAD_REGISTRIES}
+		XaerosWorldMap_1.5.7_Forge_1.15.2.jar Xaero's World Map {xaeroworldmap@1.5.7 LOAD_REGISTRIES}
+		CookingForBlockheads_1.15.2-8.0.1.jar Cooking for Blockheads {cookingforblockheads@8.0.1 LOAD_REGISTRIES}
+		Controlling-6.1.4.jar Controlling {controlling@6.1.4 LOAD_REGISTRIES}
+		ReAuth-1.14-1.15-3.8.1.jar ReAuth {reauth@3.8.1 LOAD_REGISTRIES}
+		Placebo-1.15.2-3.0.2.jar Placebo {placebo@3.0.2 LOAD_REGISTRIES}
+		globaldatapack-1.15.2-1.3.jar Dark Roleplay - Global Datapacks {globaldatapack@1.15.2-0.1.0 LOAD_REGISTRIES}
+		Powah-1.15.2-1.1.14.jar Powah {powah@1.1.14 LOAD_REGISTRIES}
+		Bookshelf-1.15.2-5.5.34.jar Bookshelf {bookshelf@5.5.34 LOAD_REGISTRIES}
+		u_team_core-1.15.2-2.11.0.156.jar U Team Core {uteamcore@2.11.0.156 LOAD_REGISTRIES}
+		randompatches-1.15.2-1.21.1.2.jar RandomPatches {randompatches@1.15.2-1.21.1.2 LOAD_REGISTRIES}
+		DarkUtilities-1.15.2-3.0.5.jar Dark Utilities {darkutils@3.0.5 LOAD_REGISTRIES}
+		Apotheosis-1.15.2-3.1.0.jar Apotheosis {apotheosis@3.1.0 LOAD_REGISTRIES}
+		ProgressiveBosses-2.1.5-mc1.15.2.jar Progressive Bosses {progressivebosses@2.1.5-mc1.15.2 LOAD_REGISTRIES}
+		mcw-doors-1.0.0-mc1.15.2.jar Macaw's Doors {mcwdoors@1.0.0 LOAD_REGISTRIES}
+		Morpheus-1.15.2-4.2.50.jar Morpheus {morpheus@version LOAD_REGISTRIES}
+		MekanismGenerators-1.15.2-9.10.5.418.jar Mekanism: Generators {mekanismgenerators@9.10.5 LOAD_REGISTRIES}
+		Hwyla-forge-1.10.8-B72_1.15.2.jar Waila {waila@version LOAD_REGISTRIES}
+		JustEnoughResources-1.15.2-0.10.1.77.jar Just Enough Resources {jeresources@0.10.1.77 LOAD_REGISTRIES}
+		refinedstorage-1.8.3.jar Refined Storage {refinedstorage@1.8.3 LOAD_REGISTRIES}
+		corpse-1.15.2-1.0.4.jar Corpse {corpse@1.15.2-1.0.4 LOAD_REGISTRIES}
+		mcw-bridges-1.0.4fix-mc1.15.2.jar Macaw's Bridges {mcwbridges@1.0.4 LOAD_REGISTRIES}
+		lightestlampsmod-3.4.1.jar Lightest Lamps {lightestlamp@3.4.1 LOAD_REGISTRIES}
+		industrial-foregoing-1.15.2-2.3.0-6f57752.jar Industrial Foregoing {industrialforegoing@2.3.0 LOAD_REGISTRIES}
+		useful_backpacks-1.15.2-1.9.4.63.jar Useful Backpacks {usefulbackpacks@1.9.4.63 LOAD_REGISTRIES}
+		torchmaster-2.1.1-rc0.jar Torchmaster {torchmaster@2.1.1-rc0 LOAD_REGISTRIES}
+		embellishcraft-1.15.2-2.2.0.0.jar EmbellishCraft {embellishcraft@1.15.2-2.2.0.0 LOAD_REGISTRIES}
+		AmbientSounds_v3.0.19_mc1.15.2.jar Ambient Sounds {ambientsounds@3.0.3 LOAD_REGISTRIES}
+		BiomesOPlenty-1.15.2-10.0.0.361-universal.jar Biomes O' Plenty {biomesoplenty@1.15.2-10.0.0.359 ERROR}
+		phosphor-forge-mc1.15.2-0.5.2+build.4.jar Phosphor {phosphor@0.5.2+build.4 LOAD_REGISTRIES}
+		MekanismAdditions-1.15.2-9.10.5.418.jar Mekanism: Additions {mekanismadditions@9.10.5 LOAD_REGISTRIES}
+		Blur-1.1.0-1.jar Blur {blur@1.1.0-1 LOAD_REGISTRIES}
+		valhelsia_structures-15.0.2a.jar Valhelsia Structures {valhelsia_structures@15.0.2a LOAD_REGISTRIES}
+		Lollipop-1.15.2-1.0.15.jar Lollipop {lollipop@1.0.15 LOAD_REGISTRIES}
+		SilentGear-1.15.2-1.6.3+89.jar Silent Gear {silentgear@1.6.3+89 LOAD_REGISTRIES}
+		simplefarming-1.15.2-1.2.7.jar Simple Farming {simplefarming@1.15.2-1.2.7 LOAD_REGISTRIES}
+		SolarFluxReborn-1.15.2-15.0.0.jar Solar Flux Reborn {solarflux@15.0.0 LOAD_REGISTRIES}
+		curios-FORGE-1.15.2-2.0.2.2.jar Curios API {curios@FORGE-1.15.2-2.0.2.2 LOAD_REGISTRIES}
+		Botania-r1.15-384.jar Botania {botania@r1.15-384 LOAD_REGISTRIES}
+		Patchouli-1.15.2-1.2-33.jar Patchouli {patchouli@1.15.2-1.2-33 LOAD_REGISTRIES}
+		extlights-2.0.jar Extended Lights {extlights@2.0 LOAD_REGISTRIES}
+		config-2-3.0.jar Cloth Config v2 API {cloth-config2@3.0 LOAD_REGISTRIES}
+		libnonymous-1.15.2-1.1.1.5.jar Libnonymous {libnonymous@1.1.1.5 LOAD_REGISTRIES}
+		elevatorid-1.15.2-1.7.0.jar Elevator Mod {elevatorid@1.15.2-1.7.0 LOAD_REGISTRIES}
+		MekanismTools-1.15.2-9.10.5.418.jar Mekanism: Tools {mekanismtools@9.10.5 LOAD_REGISTRIES}
+		mcw-roofs-1.0.2-mc1.15.2_1.15.1.jar Macaw's Roofs {mcwroofs@1.0.2 LOAD_REGISTRIES}
+		furniture-7.0.0-pre16-1.15.1.jar MrCrayfish's Furniture Mod {cfm@7.0.0-pre16 LOAD_REGISTRIES}
+		curiouselytra-FORGE-1.15.2-2.0.jar Curious Elytra {curiouselytra@FORGE-1.15.2-2.0 LOAD_REGISTRIES}
+		cc-tweaked-1.15.2-1.87.1.jar CC: Tweaked {computercraft@1.87.1 LOAD_REGISTRIES}
+		AI-Improvements-1.15.2-0.3.0.jar AI-Improvements {aiimprovements@0.3.0 LOAD_REGISTRIES}
+		mcw-furniture-1.0.1-mc1.15.1 1.15.2.jar Macaw's Furnitures {mcwfurnitures@1.0.1 LOAD_REGISTRIES}
+		cherishedworlds-FORGE-1.15.2-3.0.jar Cherished Worlds {cherishedworlds@FORGE-1.15.2-3.0 LOAD_REGISTRIES}
+		bwncr-1.15.1-3.6.13.jar Bad Wither No Cookie Reloaded {bwncr@1.15.1-3.6.13 LOAD_REGISTRIES}
+		FastLeafDecay-v22.jar FastLeafDecay {fastleafdecay@v22 LOAD_REGISTRIES}
+		CraftPresence-1.15.2-1.6.5.jar CraftPresence {craftpresence@1.6.5 LOAD_REGISTRIES}
+		QuarkOddities-1.15.2.jar Quark Oddities {quarkoddities@1.15.2 LOAD_REGISTRIES}
+		TrashSlot_1.15.2-11.0.0.jar TrashSlot {trashslot@11.0.0 LOAD_REGISTRIES}
+		torchslabmod-1.15.2_v1.6.10.jar Torch Slab Mod {torchslabmod@1.6.10 LOAD_REGISTRIES}
+		EquipmentTooltips-1.15.2-1.4.0+11.jar Equipment Tooltips {equipmenttooltips@1.4.0+11 LOAD_REGISTRIES}
+		mining-helmet-1.15.2-1.0.8.jar Mining Helmet {mining_helmet@1.0.8 LOAD_REGISTRIES}
+		jei-1.15.2-6.0.0.4.jar Just Enough Items {jei@6.0.0.4 LOAD_REGISTRIES}
+		buzzierbees-1.4.jar Buzzier Bees {buzzierbees@1.4 LOAD_REGISTRIES}
+		AttributeFix-1.15.2-7.0.2.jar AttributeFix {attributefix@7.0.2 LOAD_REGISTRIES}
+		Mekanism-1.15.2-9.10.5.418.jar Mekanism {mekanism@9.10.5 LOAD_REGISTRIES}
+		caelus-FORGE-1.15.2-2.0-beta2.jar Caelus API {caelus@FORGE-1.15.2-2.0-beta2 LOAD_REGISTRIES}
+		Upgrade-Aquatic-1.15.2-v1.5.1.jar Upgrade Aquatic {upgrade_aquatic@1.5.1 LOAD_REGISTRIES}
+		reap-1.12.3.jar Reap Mod {reap@1.12.3 LOAD_REGISTRIES}
+		WAWLA-1.15.2-3.0.2.jar WAWLA {wawla@3.0.2 LOAD_REGISTRIES}
+		Waystones_1.15.2-6.0.1.jar Waystones {waystones@6.0.1 LOAD_REGISTRIES}
+		Clumps-5.0.2.jar Clumps {clumps@5.0.2 LOAD_REGISTRIES}
+		LightOverlay-4.6.1.jar Light Overlay Forge {lightoverlay-forge@4.6.1 LOAD_REGISTRIES}
+		comforts-FORGE-1.15.2-2.0.0.2.jar Comforts {comforts@FORGE-1.15.2-2.0.0.2 LOAD_REGISTRIES}
+		NaturesCompass-1.15.2-1.8.5.jar Nature's Compass {naturescompass@1.15.2-1.8.5 LOAD_REGISTRIES}
+		FruitTrees-1.15.2-1.3.0.jar Fruit Trees {fruittrees@1.3.0 LOAD_REGISTRIES}
+		Kiwi-1.15.2-2.7.1.jar Kiwi {kiwi@2.7.1 LOAD_REGISTRIES}
+		SimpleStorageNetwork-1.15.2-0.3.2.jar Simple Storage Network {storagenetwork@1.15.2-0.3.2 LOAD_REGISTRIES}
+		SereneSeasons-1.15.2-3.0.0.69-universal.jar Serene Seasons {sereneseasons@1.15.2-3.0.0.69 LOAD_REGISTRIES}
+		decorative_blocks-6d.jar Decorative Blocks {decorative_blocks@1.6 LOAD_REGISTRIES}
+		BotanyPots-1.15.2-2.0.17.jar BotanyPots {botanypots@2.0.17 LOAD_REGISTRIES}
+		The-Endergetic-Expansion-1.15.2-v1.2.8.jar The Endergetic Expansion {endergetic@1.2.8 LOAD_REGISTRIES}
+		BonsaiTrees-2.1.2.6.jar Bonsai Trees 2 {bonsaitrees2@2.1.2.6 LOAD_REGISTRIES}
+		mcjtylib-1.15-4.1.0-beta.jar McJtyLib {mcjtylib@1.15-4.1.0-beta LOAD_REGISTRIES}
+		rftoolsbase-1.15-1.1.1-beta.jar RFToolsBase {rftoolsbase@1.15-1.1.1-beta LOAD_REGISTRIES}
+		xnet-1.15-2.1.2-beta.jar XNet {xnet@1.15-2.1.2-beta LOAD_REGISTRIES}
+		rftoolsstorage-1.15-1.1.2-beta.jar RFToolsStorage {rftoolsstorage@1.15-1.1.2-beta LOAD_REGISTRIES}
+		rftoolscontrol-1.15-3.0.2-beta.jar RFToolsControl {rftoolscontrol@1.15-3.0.2-beta LOAD_REGISTRIES}
+		mapperbase-1.15.2-1.1.0.0.jar Mapper Base {mapperbase@1.15.2-1.1.0.0 LOAD_REGISTRIES}
+		trash-1.15.2-0.1.4.jar Trash {trash@1.15.2-0.1.4 LOAD_REGISTRIES}
+		ToastControl-1.15.2-3.0.1.jar Toast Control {toastcontrol@3.0.1 LOAD_REGISTRIES}
+		mininggadgets-1.3.5.jar Mining Gadgets {mininggadgets@1.3.5 LOAD_REGISTRIES}
+		rftoolspower-1.15-2.1.1-beta.jar RFToolsPower {rftoolspower@1.15-2.1.1-beta LOAD_REGISTRIES}
+		extradisks-1.15.1-1.2.jar Extra Disks {extradisks@1.15.1-1.2 LOAD_REGISTRIES}
+		swampexpansion-1.15.2-1.6.1.jar Swamp Expansion {swampexpansion@NONE LOAD_REGISTRIES}
+		forge-1.15.2-31.1.87-universal.jar Forge {forge@31.1.87 LOAD_REGISTRIES}
+		Bountiful-1.15.2-3.1.1.jar Bountiful {bountiful@1.15.2-3.1.1 LOAD_REGISTRIES}
+		ironchest-1.15.2-10.0.3.jar Iron Chests {ironchest@1.15.2-10.0.1 LOAD_REGISTRIES}
+		CraftingTweaks_1.15.1-11.0.0.jar Crafting Tweaks {craftingtweaks@11.0.0 LOAD_REGISTRIES}
+		forge-1.15.2-31.1.87-client.jar Minecraft {minecraft@1.15.2 LOAD_REGISTRIES}
+		cofh_core-1.15.2-0.4.0b.jar CoFH Core {cofh_core@0.4.0b LOAD_REGISTRIES}
+		ensorcellation-1.15.2-0.4.1b.jar Ensorcellation {ensorcellation@0.4.1b LOAD_REGISTRIES}
+		rftoolsutility-1.15-2.1.2-beta.jar RFToolsUtility {rftoolsutility@1.15-2.1.2-beta LOAD_REGISTRIES}
+		swingthroughgrass-1.15.2-1.4.0.jar SwingThroughGrass {swingthroughgrass@1.15.2-1.4.0 LOAD_REGISTRIES}
+		MouseTweaks-2.13-mc1.15.1.jar Mouse Tweaks {mousetweaks@2.13 LOAD_REGISTRIES}
+		ToolBelt-1.15.2-1.14.1.jar Tool Belt {toolbelt@1.14.1 LOAD_REGISTRIES}
+		titanium-1.15.2-2.4.0.jar Titanium {titanium@2.4.0 LOAD_REGISTRIES}
+		SilentLib-1.15.2-4.6.1+49.jar Silent Lib {silentlib@4.6.1+49 LOAD_REGISTRIES}
+		forbidden_arcanus-1.15.2-1.3.1.jar Forbidden & Arcanus {forbidden_arcanus@1.15.2-1.3.1 LOAD_REGISTRIES}
+		archers_paradox-1.15.2-0.4.0b.jar Archer's Paradox {archers_paradox@0.4.0b LOAD_REGISTRIES}
+		atmospheric-1.15.2-1.2.1.jar Atmospheric {atmospheric@1.2.1 LOAD_REGISTRIES}
+		rftoolsbuilder-1.15-2.1.1-beta.jar RFToolsBuilder {rftoolsbuilder@1.15-2.1.1-beta LOAD_REGISTRIES}
+		MiscAdditions-1.2.3.jar Misc Additions {miscadditions@1.2.3 LOAD_REGISTRIES}
+		jeiintegration_1.15.2-3.1.0.1.jar JEI Integration {jeiintegration@3.1.0.1 LOAD_REGISTRIES}
+		Xaeros_Minimap_20.9.0_Forge_1.15.2.jar Xaero's Minimap {xaerominimap@20.9.0 LOAD_REGISTRIES}
+		JAOPCA-1.15.2-3.2.0.9.jar JAOPCA {jaopca@3.2.0.9 LOAD_REGISTRIES}
+		FastWorkbench-1.15.1-3.0.0.jar FastWorkbench {fastbench@3.0.0 LOAD_REGISTRIES}
+		autumnity-1.2.0-1.15.2.jar Autumnity {autumnity@1.2.0 LOAD_REGISTRIES}
+		AutoRegLib-1.5-40.jar AutoRegLib {autoreglib@1.5-40 LOAD_REGISTRIES}
+		Quark-r2.1-237.jar Quark {quark@r2.1-237 LOAD_REGISTRIES}
+		StorageDrawers-1.15.2-7.0.2.jar Storage Drawers {storagedrawers@1.15.2-7.0.1 LOAD_REGISTRIES}
+		FluxNetworks-1.15.2-5.0.1-2.jar Flux Networks {fluxnetworks@1.15.2-5.0.1-2 LOAD_REGISTRIES}
+		performant-1.15-2.10m.jar Performant {performant@2.10m LOAD_REGISTRIES}
+		DoubleSlabs-1.15-2.2.7.jar Double Slabs {doubleslabs@2.2.7 LOAD_REGISTRIES}
+		themidnight-0.5.7-3.jar The Midnight {midnight@0.5.7-3 LOAD_REGISTRIES}
+		HardcoreRevival_1.15.2-4.0.1.jar Hardcore Revival {hardcorerevival@4.0.1 LOAD_REGISTRIES}
+		structurize-0.10.315-ALPHA.jar Structurize {structurize@0.10.315-ALPHA LOAD_REGISTRIES}
+		minecolonies-0.11.945-ALPHA-universal.jar Minecolonies {minecolonies@0.11.945-ALPHA LOAD_REGISTRIES}
+		FastFurnace-1.15.1-3.0.0.jar FastFurnace {fastfurnace@3.0.0 LOAD_REGISTRIES}
+		AppleSkin-mc1.15.2-forge-1.0.13.jar AppleSkin {appleskin@1.0.13 LOAD_REGISTRIES}
+		Aquaculture-1.15.2-2.0.13.jar Aquaculture 2 {aquaculture@1.15.2-2.0.13 LOAD_REGISTRIES}
+		refinedstorageaddons-0.6.1.jar Refined Storage Addons {refinedstorageaddons@0.6.1 LOAD_REGISTRIES}
+		CosmeticArmorReworked-1.15.2-v3a.jar CosmeticArmorReworked {cosmeticarmorreworked@1.15.2-v3a LOAD_REGISTRIES}
+		DefaultOptions_1.15.2-11.0.1.jar Default Options {defaultoptions@11.0.1 LOAD_REGISTRIES}
+	Kiwi Modules: 
+		fruittrees:cherry
+		fruittrees:fruittrees
+		fruittrees:hybridization
+		kiwi:contributors
+		kiwi:data
+	Launched Version: forge-31.1.87
+	Backend library: LWJGL version 3.2.2 build 10
+	Backend API: GeForce RTX 2060/PCIe/SSE2 GL version 4.6.0 NVIDIA 445.87, NVIDIA Corporation
+	GL Caps: Using framebuffer using OpenGL 3.0
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'
+	Type: Client (map_client.txt)
+	CPU: 8x Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
